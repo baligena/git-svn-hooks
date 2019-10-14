@@ -31,7 +31,7 @@ git() {
 	# https://stackoverflow.com/questions/9226528/how-can-i-avoid-an-accidental-dcommit-from-a-local-branch#answer-9330342
 	if [[ ($1 == svn) && ($2 == dcommit) ]]
 	then
-		curr_branch=$($real_git branch | sed -n 's/\* //p')
+		curr_branch=$(command git branch | sed -n 's/\* //p')
 		if [[ ($curr_branch != master) && ($curr_branch != '(no branch)') ]]
 		then
 			echo -e "${v_color_red}FSQ ERROR: for 'git svn dcommit' you must be in master branch!${v_color_none}"
