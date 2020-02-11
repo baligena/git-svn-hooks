@@ -16,7 +16,7 @@ git() {
 	##################################################
 	# changes default to not auto commit on merge
 	if [[ "$1" == "merge" && "$@" != *"--"* ]]; then
-		echo -e "${v_color_brown_orange}FSQ OVERRIDE COMMAND:${v_color_none}: git $@ --no-commit ";
+		echo -e "${v_color_brown_orange}FSQ OVERRIDE COMMAND:${v_color_none} git $@ --no-commit ";
 		command git "$@" --no-commit
 		return $?
 	fi
