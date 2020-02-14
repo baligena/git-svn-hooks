@@ -13,15 +13,6 @@
 # repo: https://github.com/rkitover/git-svn-hooks
 
 git() {
-	##################################################
-	# changes default to not auto commit on merge
-	if [[ "$1" == "merge" && "$@" != *"--"* ]]; then
-		echo -e "${v_color_brown_orange}FSQ OVERRIDE COMMAND:${v_color_none} git $@ --no-commit ";
-		command git "$@" --no-commit
-		return $?
-	fi
-	##################################################
-
     _root=$(command git rev-parse --show-toplevel 2>/dev/null);
 
     # check that this is a git-svn repo
